@@ -1,0 +1,12 @@
+<div id="canvasContainer">
+  <span *ngFor="let child of connectionElements; let i = index;">
+    <app-canvas-node *ngIf="layer && stage" [layer]="layer" [stage]="stage" (inputClicked)="inputClicked($event)" (outputClicked)="outputClicked($event)"
+      (nodeMoved)="nodeMoved($event)"></app-canvas-node>
+  </span>
+  <span *ngFor="let child of startElements">
+    <app-canvas-node *ngIf="layer && stage" [deactiveInput]="true" [layer]="layer" [stage]="stage" (inputClicked)="inputClicked($event)"
+      (outputClicked)="outputClicked($event)" (nodeMoved)="nodeMoved($event)"></app-canvas-node>
+  </span>
+  <app-canvas-node *ngIf="layer && stage" [deactiveOutput]="true" [layer]="layer" [stage]="stage" (inputClicked)="inputClicked($event)"
+    (outputClicked)="outputClicked($event)" (nodeMoved)="nodeMoved($event)"></app-canvas-node>
+</div>
